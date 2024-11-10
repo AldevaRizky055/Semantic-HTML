@@ -1,18 +1,36 @@
-Menggunakan CSS (Cascading Style Sheets) dalam sebuah halaman HTML membawa perbedaan yang signifikan pada penampilan dan tata letak halaman dibandingkan dengan hanya menggunakan HTML tanpa CSS. Berikut ini adalah penjelasan lengkap perbedaan antara menggunakan CSS dan tidak menggunakan CSS dari program di atas.
+## Perbaikan Kode HTML dan CSS
+Pada kode HTML dan CSS di program, beberapa perbaikan yang dilakukan meliputi:
+
+1. **Struktur HTML**:
+   - Ditambahkan tag `<html>`, `<head>`, dan `<body>` yang sesuai untuk membuat dokumen HTML menjadi valid dan terstruktur dengan baik.
+   - Ditambahkan `<meta charset="UTF-8">` dan `<meta name="viewport" content="width=device-width, initial-scale=1.0">` untuk mendukung karakter UTF-8 dan tampilan responsif di perangkat mobile.
+   - Tag `<title>` disertakan untuk memberikan judul pada halaman.
+   - File CSS eksternal ditautkan melalui `<link rel="stylesheet" href="./assets/styles/styles.css">` untuk memisahkan styling dari struktur HTML.
+  
+2. **Perbaikan Struktur CSS**:
+   - CSS dipindahkan ke file terpisah (`styles.css`) untuk meningkatkan keterbacaan dan pemeliharaan kode.
+   - Penggunaan **grid layout** ditambahkan pada elemen `body` untuk mengatur tata letak halaman.
+   - Setiap elemen (`header`, `nav`, `section`, `footer`) diberi **warna latar belakang**, **grid-area**, dan **padding** agar terlihat lebih rapi.
+
+---
+
+## Penjelasan Penggunaan CSS vs Tanpa CSS pada HTML
+
+Menggunakan CSS (Cascading Style Sheets) dalam sebuah halaman HTML memberikan tampilan dan tata letak yang lebih baik daripada hanya menggunakan HTML tanpa CSS. Berikut adalah penjelasan perbedaan yang signifikan.
 
 ### 1. **Tampilan Visual**
 - **Tanpa CSS**: 
-  - Halaman HTML tanpa CSS akan menampilkan elemen-elemen secara sederhana dan default. Semua elemen HTML akan terlihat dalam tata letak linier dari atas ke bawah, tanpa ada penyesuaian warna, ukuran, atau posisi.
-  - Header, navigasi, konten, dan footer akan tampil dalam urutan blok satu di bawah yang lain dengan tampilan standar hitam-putih.
+  - HTML tanpa CSS hanya menampilkan elemen-elemen secara default, tanpa penyesuaian warna, ukuran, atau posisi.
+  - Semua elemen ditampilkan dalam tata letak linier dari atas ke bawah, dengan tampilan warna standar hitam-putih.
 - **Dengan CSS**: 
-  - Elemen-elemen halaman dapat diatur sedemikian rupa dengan berbagai atribut visual, seperti warna latar belakang, margin, padding, tata letak grid, dan lain-lain.
-  - Dalam contoh Anda, penggunaan CSS memberikan warna latar yang berbeda pada setiap elemen (`header`, `nav`, `section`, `footer`), menambahkan padding untuk jarak antar elemen, dan membuat tata letak grid yang memposisikan `nav` di sebelah kiri dan `section` di tengah.
+  - Elemen-elemen halaman dapat disesuaikan dengan berbagai atribut visual seperti warna latar belakang, margin, padding, dan tata letak grid.
+  - Pada contoh ini, CSS memberikan warna latar yang berbeda untuk `header`, `nav`, `section`, dan `footer`, serta membuat tata letak grid yang memposisikan `nav` di sebelah kiri dan `section` di tengah.
 
 ### 2. **Tata Letak Halaman**
 - **Tanpa CSS**: 
-  - Semua elemen HTML ditampilkan secara vertikal dalam satu kolom. Tidak ada pengaturan posisi elemen yang fleksibel, sehingga halaman cenderung terlihat monoton dan tidak menarik.
+  - Semua elemen ditampilkan secara vertikal dalam satu kolom, yang seringkali terlihat monoton dan kurang menarik.
 - **Dengan CSS**: 
-  - CSS memungkinkan penggunaan **grid layout** yang dapat mengatur elemen-elemen secara responsif dan lebih terstruktur. Dalam contoh Anda, CSS membuat elemen-elemen memiliki area grid yang berbeda:
+  - Penggunaan **grid layout** pada CSS memungkinkan penataan elemen secara responsif. Contohnya:
     ```css
     body {
         display: grid;
@@ -24,13 +42,13 @@ Menggunakan CSS (Cascading Style Sheets) dalam sebuah halaman HTML membawa perbe
         grid-template-columns: 20% 1fr 18%;
     }
     ```
-    Ini membuat `header` berada di bagian atas, `nav` di sebelah kiri, `section` di tengah, dan `footer` di bagian bawah, memberikan struktur halaman yang lebih profesional.
+    Hal ini membuat `header` berada di bagian atas, `nav` di sebelah kiri, `section` di tengah, dan `footer` di bawah.
 
 ### 3. **Warna dan Gaya Visual**
 - **Tanpa CSS**: 
-  - Warna elemen dan teks akan ditampilkan sesuai dengan pengaturan default browser, yaitu teks hitam dengan latar belakang putih atau abu-abu.
+  - Elemen-elemen ditampilkan dengan warna standar browser (umumnya hitam dan putih).
 - **Dengan CSS**: 
-  - Elemen-elemen dapat diubah warnanya sesuai kebutuhan. Contohnya, `header` dan `footer` diberi warna abu-abu gelap, `nav` diberi warna abu-abu muda, dan `section` memiliki warna abu-abu netral.
+  - Setiap elemen dapat memiliki warna khusus, contohnya `header` dan `footer` memiliki warna abu-abu gelap, `nav` berwarna abu-abu muda, dan `section` berwarna abu-abu netral:
     ```css
     header {
         background: #707070;
@@ -48,9 +66,9 @@ Menggunakan CSS (Cascading Style Sheets) dalam sebuah halaman HTML membawa perbe
 
 ### 4. **Ukuran dan Spasi Antar Elemen**
 - **Tanpa CSS**:
-  - Elemen-elemen akan ditampilkan dengan margin dan padding default yang seringkali tidak memadai untuk tampilan estetis.
+  - Setiap elemen ditampilkan dengan margin dan padding default yang kurang rapi.
 - **Dengan CSS**:
-  - Anda dapat menambahkan margin, padding, dan spasi antar elemen untuk memberikan kesan ruang yang lebih lega dan rapi. Contoh:
+  - CSS memungkinkan kita menambahkan margin, padding, dan jarak antar elemen untuk memberikan ruang yang lebih rapi dan estetis:
     ```css
     header, nav, section, footer {
         padding: 5px;
@@ -59,9 +77,113 @@ Menggunakan CSS (Cascading Style Sheets) dalam sebuah halaman HTML membawa perbe
 
 ### 5. **Responsivitas**
 - **Tanpa CSS**:
-  - Elemen-elemen tidak akan secara otomatis menyesuaikan diri dengan ukuran layar perangkat. Halaman akan terlihat sama pada layar kecil maupun besar, tanpa adaptasi.
+  - Halaman tidak dapat menyesuaikan diri dengan berbagai ukuran layar.
 - **Dengan CSS**:
-  - CSS dapat digunakan untuk membuat tata letak yang responsif, yang berarti halaman akan menyesuaikan diri sesuai ukuran layar perangkat. Misalnya, penggunaan **grid layout** seperti pada contoh Anda membantu halaman untuk menampilkan elemen-elemen dengan proporsi yang lebih seimbang di berbagai ukuran layar.
+  - Penggunaan CSS memungkinkan tata letak yang responsif, seperti pengaturan grid yang lebih fleksibel untuk berbagai ukuran layar.
 
 ### **Kesimpulan**
-CSS sangat penting dalam membuat halaman web yang menarik, terstruktur, dan user-friendly. Tanpa CSS, halaman web cenderung terlihat polos, tidak terstruktur, dan kurang menarik secara visual. Dengan CSS, halaman web dapat diubah menjadi sesuatu yang lebih interaktif dan modern, dengan tata letak, warna, dan elemen visual yang sesuai dengan kebutuhan pengguna.
+CSS sangat penting dalam menciptakan halaman web yang menarik dan user-friendly. Dengan CSS, elemen-elemen dapat diatur secara lebih profesional dan estetis.
+
+---
+
+## Source Code
+
+### HTML Sebelum Diperbaiki
+
+```html
+<!DOCTYPE html>
+<header> 
+ <h1>HTML5 Semantic</h1> 
+</header> 
+<nav> 
+ <ul> 
+ <li><a href="#home">Home</a></li> 
+ <li><a href="#pengertian">Pengertian</a></li> 
+ <li><a href="#kesimpulan">Kesimpulan</a></li> 
+ </ul> 
+</nav> 
+<section> 
+ Konten 
+</section> 
+<footer> 
+ Copyright 
+</footer>
+```
+
+### HTML Setelah Diperbaiki
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Semantic</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML5 Semantic</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#pengertian">Pengertian</a></li>
+            <li><a href="#kesimpulan">Kesimpulan</a></li>
+        </ul>
+    </nav>
+    <section>
+        Konten
+    </section>
+    <footer>
+        Copyright
+    </footer>
+</body>
+</html>
+```
+
+### CSS File (`styles.css`)
+
+```css
+nav {
+    background: #C9BFBF;
+    grid-area: nav;
+}
+
+header {
+    background: #707070;
+    grid-area: header;
+    text-align: center;
+}
+
+section {
+    background: #ABABAB;
+    grid-area: section;
+}
+
+footer {
+    background: #707070;
+    grid-area: footer;
+    font-size: small;
+    text-align: center;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav section section"
+        "footer footer footer";
+    grid-template-rows: 80px 1fr 50px;
+    grid-template-columns: 20% 1fr 18%;
+    grid-gap: 5px;
+    height: 100vh;
+    margin: 10px;
+}
+
+header, nav, section, footer {
+    padding: 5px;
+}
+```
+
+---
